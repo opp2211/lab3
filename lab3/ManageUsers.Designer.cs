@@ -39,6 +39,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,10 +54,11 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6});
+            this.Column6,
+            this.Column7});
             this.dataGridView1.Location = new System.Drawing.Point(9, 37);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(644, 218);
+            this.dataGridView1.Size = new System.Drawing.Size(743, 218);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -87,7 +89,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(402, 261);
+            this.button2.Location = new System.Drawing.Point(524, 261);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(202, 23);
             this.button2.TabIndex = 4;
@@ -126,18 +128,23 @@
             this.Column6.HeaderText = "Символы в пароле";
             this.Column6.Name = "Column6";
             // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Мин. длина";
+            this.Column7.Name = "Column7";
+            // 
             // ManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 294);
+            this.ClientSize = new System.Drawing.Size(758, 291);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.MaximumSize = new System.Drawing.Size(675, 333);
-            this.MinimumSize = new System.Drawing.Size(675, 333);
+            this.MaximumSize = new System.Drawing.Size(774, 330);
+            this.MinimumSize = new System.Drawing.Size(774, 330);
             this.Name = "ManageUsers";
             this.Text = "ManageUsers";
             this.Load += new System.EventHandler(this.ManageUsers_Load);
@@ -160,5 +167,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

@@ -96,29 +96,70 @@ namespace lab3
 
         bool CheckPassword(User user, string pass)
         {
+            if (pass.Length < user.passMinLength)
+                    return false;
             for (int i = 0; i < pass.Length; i++)
             {
-                if (pass[i] >= 33 && pass[i] <= 127)
+                if (pass[i] < 33 && pass[i] > 127)
+                    return false;
+            }
+            if (user.passNum == true)
+            {
+                bool fits = false;
+                for (int i = 0; i < pass.Length; i++)
                 {
                     if (pass[i] >= 48 && pass[i] <= 57)
                     {
-                        if (user.passNum == false)
-                            return false;
+                        fits = true;
+                        break;
                     }
+                }
+                if (fits == false)
+                    return false;
+            }
+            if (user.passUpper == true)
+            {
+                bool fits = false;
+                for (int i = 0; i < pass.Length; i++)
+                {
                     if (pass[i] >= 65 && pass[i] <= 90)
                     {
-                        if (user.passUpper == false)
-                            return false;
+                        fits = true;
+                        break;
                     }
+                }
+                if (fits == false)
+                    return false;
+            }
+            if (user.passLower == true)
+            {
+                bool fits = false;
+                for (int i = 0; i < pass.Length; i++)
+                {
                     if (pass[i] >= 97 && pass[i] <= 122)
                     {
-                        if (user.passLower == false)
-                            return false;
+                        fits = true;
+                        break;
                     }
-                    if (user.passSymb == false)
-                        return false;
                 }
-                else
+                if (fits == false)
+                    return false;
+            }
+            if (user.passSymb == true)
+            {
+                bool fits = false;
+                for (int i = 0; i < pass.Length; i++)
+                {
+                    if ((pass[i] >= 33 && pass[i] <= 47) ||
+                        (pass[i] >= 58 && pass[i] <= 64) ||
+                        (pass[i] >= 91 && pass[i] <= 96) ||
+                        (pass[i] >= 123 && pass[i] <= 127))
+                    {
+                        fits = true;
+                        break;
+                    }
+                }
+                if (fits == false)
                     return false;
             }
             return true;

@@ -32,7 +32,7 @@ namespace lab3
             uss = users.GetUsers;
             for (int i = 1; i < uss.Count; i++)
             {
-                dataGridView1.Rows.Add(uss[i].login, uss[i].access, uss[i].passNum, uss[i].passUpper, uss[i].passLower, uss[i].passSymb);
+                dataGridView1.Rows.Add(uss[i].login, uss[i].access, uss[i].passNum, uss[i].passUpper, uss[i].passLower, uss[i].passSymb, uss[i].passMinLength);
             }
         }
 
@@ -53,6 +53,7 @@ namespace lab3
                 uss[i + 1].passUpper = (bool)dataGridView1.Rows[i].Cells[3].Value;
                 uss[i + 1].passLower= (bool)dataGridView1.Rows[i].Cells[4].Value;
                 uss[i + 1].passSymb = (bool)dataGridView1.Rows[i].Cells[5].Value;
+                uss[i + 1].passMinLength = Convert.ToInt32(dataGridView1.Rows[i].Cells[6].Value);
             }
 
             FillUsers();

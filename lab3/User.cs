@@ -11,9 +11,10 @@ namespace lab3
         public string login { get; set; }
         public string password { get; set; }
         public bool access { get; set; } = true;
-        public bool passNum { get; set; } = true;
-        public bool passUpper { get; set; } = true;
-        public bool passLower { get; set; } = true;
-        public bool passSymb { get; set; } = true;
+        public bool passNum { get; set; } = false;
+        public bool passUpper { get; set; } = false;
+        public bool passLower { get; set; } = false;
+        public bool passSymb { get; set; } = false;
+        public int passMinLength { get; set; } = 0;
     }
 }
